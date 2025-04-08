@@ -4,6 +4,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.netology.dz_netol_with_tomcat.servlet.controller.PostController;
 import ru.netology.dz_netol_with_tomcat.servlet.repository.PostRepository;
 import ru.netology.dz_netol_with_tomcat.servlet.service.PostService;
@@ -19,9 +20,8 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void init() {
-        final var repository = new PostRepository();
-        final var service = new PostService(repository);
-        controller = new PostController(service);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("ru.netology");
+        controller = context.getBean(PostController.class);
     }
 
     @Override

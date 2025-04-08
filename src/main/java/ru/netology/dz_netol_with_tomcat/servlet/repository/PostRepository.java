@@ -1,5 +1,6 @@
 package ru.netology.dz_netol_with_tomcat.servlet.repository;
 
+import org.springframework.stereotype.Repository;
 import ru.netology.dz_netol_with_tomcat.servlet.exception.NotFoundException;
 import ru.netology.dz_netol_with_tomcat.servlet.model.Post;
 
@@ -8,6 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 // Stub
+@Repository
 public class PostRepository {
     private final Map<Long, Post> posts = new ConcurrentHashMap<>();
     private final AtomicLong postId = new AtomicLong(0);

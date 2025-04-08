@@ -2,6 +2,8 @@ package ru.netology.dz_netol_with_tomcat.servlet.controller;
 
 import com.google.gson.Gson;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import ru.netology.dz_netol_with_tomcat.servlet.model.Post;
 import ru.netology.dz_netol_with_tomcat.servlet.service.PostService;
 
@@ -9,11 +11,13 @@ import ru.netology.dz_netol_with_tomcat.servlet.service.PostService;
 import java.io.IOException;
 import java.io.Reader;
 
+@Controller
 public class PostController {
     public static final String APPLICATION_JSON = "application/json";
     private final PostService service;
     private final Gson gson = new Gson();
 
+    @Autowired
     public PostController(PostService service) {
         this.service = service;
     }

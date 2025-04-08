@@ -1,15 +1,19 @@
 package ru.netology.dz_netol_with_tomcat.servlet.service;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.netology.dz_netol_with_tomcat.servlet.model.Post;
 import ru.netology.dz_netol_with_tomcat.servlet.repository.PostRepository;
 import ru.netology.dz_netol_with_tomcat.servlet.exception.NotFoundException;
 
 import java.util.List;
 
+@Service
 public class PostService {
     private final PostRepository repository;
 
+    @Autowired
     public PostService(PostRepository repository) {
         this.repository = repository;
     }
