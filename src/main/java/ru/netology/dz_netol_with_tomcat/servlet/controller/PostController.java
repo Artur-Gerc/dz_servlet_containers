@@ -20,6 +20,7 @@ public class PostController {
     @Autowired
     public PostController(PostService service) {
         this.service = service;
+
     }
 
     public void all(HttpServletResponse response) throws IOException {

@@ -16,6 +16,7 @@ public class PostService {
     @Autowired
     public PostService(PostRepository repository) {
         this.repository = repository;
+
     }
 
     public List<Post> all() {
